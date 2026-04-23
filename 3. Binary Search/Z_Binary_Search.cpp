@@ -72,7 +72,7 @@ int main() {
                 break;
             } 
             else if(v[mid] < target) left = mid + 1;
-            else right = right - 1; 
+            else right = mid - 1; 
         // Inner while ends
         }
 
