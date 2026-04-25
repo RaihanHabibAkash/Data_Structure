@@ -31,6 +31,7 @@ YES
 YES
 NO
 */
+// https://www.hackerrank.com/contests/assignment-01-a-basic-data-structure-a-batch-06/challenges
 #include <bits/stdc++.h>
 using namespace std;
 
