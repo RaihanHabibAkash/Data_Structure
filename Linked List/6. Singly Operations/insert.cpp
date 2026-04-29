@@ -12,40 +12,41 @@ public:
     }
 };
 
-void insert(Node* &head, int val) {
-    // Creating Node
+void insert(Node* &head, Node* &tail, int val) {
+    // Create new Node
     Node* newNode = new Node(val);
 
-    // If Liked list is Empty
-    if(head == NULL) head = newNode;
-    else {
-        // Current Node
-        Node* current = head;
-
-        // Inserting at 1st
-        if(val <= current->val) {
-            newNode->next = head;
-            head = newNode;
-        }
-        else { // Not 1st
-            // Traversing untile found val <= Number
-            while(current->next != NULL) {
-                if(val >= current->next->val) break;
-                current = current->next; 
-            }
-
-            // Last Node
-            if(current->next == NULL) current->next = newNode;
-            // Middle node
-            else {
-                newNode->next = current->next;
-                current->next = newNode;
-            }
-
-        // Innser else end
-        }
-    // Outter else end
+    // If the head is empty
+    if(head == NULL) {
+        head = newNode;
+        tail = newNode;
+        return;
     }
+
+    // Inserting at first
+    if(head->val >= val) {
+        newNode->next = head;
+        head = newNode;
+        return;
+    }
+
+    // Traversing
+    Node* current = head;
+    while(current->next != NULL) {
+        if(current->next->val >= val) break;
+        current = current->next;
+    }
+
+    // At tail
+    if(current->next == NULL) {
+        tail->next = newNode;
+        tail = tail->next;
+        return;
+    }
+
+    // Inserting at middle
+    newNode->next = current->next;
+    current->next = newNode;
 }
 
 void printingSinglyLinkedList(Node* headCpy) {
@@ -61,14 +62,17 @@ void printingSinglyLinkedList(Node* headCpy) {
 }
 
 int main() {
-    // For empty Node
     Node* head = NULL;
+    Node* tail = NULL;
 
-    // Inserting
-    insert(head, 100);
-    insert(head, 200);
-    insert(head, 50);
-    insert(head, 200);
+    // Taking input from users
+    int n;
+    while(1) {
+        cin >> n;
+        if(n == -1) break;
+
+        insert(head, tail, n);
+    }
 
     // Printing
     printingSinglyLinkedList(head);
