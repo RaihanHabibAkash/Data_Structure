@@ -55,11 +55,12 @@ int main() {
     Node* tail = NULL;
 
     // Inserting value
-    insertAtEnd(head, tail, 10);
-    insertAtEnd(head, tail, 20);
-    insertAtEnd(head, tail, 40);
-    insertAtEnd(head, tail, 50);
-    insertAtEnd(head, tail, 30);
+    while(true) {
+        int val; cin >> val;
+        if(val == -1) break;
+
+        insertAtEnd(head, tail, val);
+    }
 
 
     // Printing the count
