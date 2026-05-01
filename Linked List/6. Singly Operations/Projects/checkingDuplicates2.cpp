@@ -1,3 +1,17 @@
+/*
+Question: Create a singly linked list and check if the linked list contains any duplicate value. You can assume that the maximum value will be 100.
+
+
+Sample Linked List
+Sample Output
+5 4 8 6 2 1
+NO
+
+
+2 4 5 6 7 4
+YES
+*/
+// https://docs.google.com/document/d/1KJAVqqr7pqeMR0z5ATAXmKbIQo2JazHf/edit
 #include <bits/stdc++.h>
 using namespace std;
 
