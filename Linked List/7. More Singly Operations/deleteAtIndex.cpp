@@ -50,20 +50,10 @@ void deleteAtIndex(Node* &head, Node* &tail, int index) {
     // Pointer that will point the deleted index
     Node* deleteNode = current->next;
 
-    // Delete at tail
-    if(current->next->next == NULL) {
-        // tail will point the current
-        tail = current;
+    // Tail will point current
+    if(current->next->next == NULL) tail = current;
 
-        // Tail next will be null
-        tail->next = NULL;
-
-        // Delete the node
-        delete deleteNode;
-        return;
-    }
-
-    // Delete at middle
+    // Delete at middle or tail
     // connecting current node with next of next node(currentNode + 2)
     current->next = current->next->next;
     
