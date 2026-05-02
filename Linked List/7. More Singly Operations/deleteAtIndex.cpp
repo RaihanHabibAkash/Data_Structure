@@ -75,7 +75,7 @@ void printing(Node* headCpy) {
 }
 
 int main() {
-        // Empty linked list
+    // Empty linked list
     Node* head = NULL;
     Node* tail = NULL;
 
