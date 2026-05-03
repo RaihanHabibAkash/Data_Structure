@@ -30,11 +30,17 @@ void insertAtTail(Node* &head, Node* &tail, int number) {
 }
 
 void deleteAtTail(Node* &head, Node* &tail) {
+    // If empty linked list
+    if(head == NULL) {
+        cout << "Empty Singly Linked List" << endl;
+        return;
+    }
+
     // Current pointer for iteration
     Node* current = head;
 
-    // Delete at head if one node left
-    if(current->next == NULL) {
+    // Delete if one node left
+    if(head == tail) {
         // Delete the node
         delete current;
 
@@ -85,9 +91,9 @@ int main() {
 
     // Deleting
     deleteAtTail(head, tail);
-    deleteAtTail(head, tail);
+    // deleteAtTail(head, tail);
 
     // Printing
-    printing(head);  
+    printing(head);
     return 0;
 }
