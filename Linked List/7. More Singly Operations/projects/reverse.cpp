@@ -1,3 +1,19 @@
+/*
+Question: Take a singly linked list as input and print the reverse of the linked list.
+
+Sample Input
+Sample Output
+5 4 8 6 2 1 -1
+1 2 6 8 4 5
+
+
+1 2 3 4 -1
+4 3 2 1
+
+
+*/
+// https://docs.google.com/document/d/1EXLsPmtlVXNjdqk49BCcLbPHf0n4UBlP/edit
+
 #include <bits/stdc++.h>
 using namespace std;
 
