@@ -1,3 +1,4 @@
+// https://www.hackerrank.com/contests/assignment-02-a-basic-data-structures-a-batch-06/challenges
 /*
 Problem Statement
 
@@ -42,7 +43,6 @@ Sample Output 3
 
 10 20
 */
-
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -74,15 +74,11 @@ void insertAtTail(Node* &head, Node* &tail, int value) {
     tail = tail->next;
 }
 
-void removeDupArr(int* arr, Node* headCpy) {
-    // Base case
-    if(headCpy == NULL) return;
-
-    // Freq array
-    arr[headCpy->val]++;
-
-    // Main case
-    removeDupArr(arr, headCpy->next);
+void dupArr(int* freq, Node* headCpy) {
+    while(headCpy != NULL) {
+        if(freq[headCpy->val] == 0) freq[headCpy->val]++;
+        headCpy = headCpy->next;
+    }
 }
 
 void printing(Node* headCpy) {
@@ -110,17 +106,22 @@ int main() {
         insertAtTail(head, tail, value);
     }
 
-    // remove duplicate using freq array
+    // Insert duplicate
     int freq[1005] = {0};
-    removeDupArr(freq, head);
+    dupArr(freq, head);
     
     // Creating new Node
     Node* newHead = NULL;
     Node* newTail = NULL;
-
-    // Inserting !duplicate value in the linked list
-    for(int i = 0; i <= 1000; i++) if(freq[i] > 0) insertAtTail(newHead, newTail, i);
     
+    // Traversing
+    Node* current = head;
+    while(current != NULL) {
+        // Only 1st value will insert
+        if(freq[current->val]-- > 0) insertAtTail(newHead, newTail, current->val);
+        current = current->next;
+    } 
+
     // Printing
     printing(newHead);
 
