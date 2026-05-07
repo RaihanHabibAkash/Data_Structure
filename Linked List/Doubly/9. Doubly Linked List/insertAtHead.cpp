@@ -32,9 +32,17 @@ void printBackward(Node* tailCpy) {
     cout << endl;
 }
 
-void insertAtHead(Node* &head, int value) {
+void insertAtHead(Node* &head, Node* &tail, int value) {
     // Creating new node
     Node* newNode = new Node(value);
+
+    // If the linked list is empty
+    if(head == NULL) {
+        head = newNode;
+        tail = newNode;
+        return;
+    }
+
     // Connecting them
     newNode->next = head;
     head->prev = newNode;
@@ -55,8 +63,8 @@ int main() {
     tail->prev = a;
 
     // Insert At head
-    insertAtHead(head, 100);
-    insertAtHead(head, 200);
+    insertAtHead(head, tail, 100);
+    insertAtHead(head, tail, 200);
 
     // Printing
     printForward(head);
