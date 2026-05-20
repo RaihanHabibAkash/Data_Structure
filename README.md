@@ -10,3 +10,6 @@
 8. HackerRank Problems
 9. Doubly Linked List
 10. STL List
+11. List LeetCode Problems
+12. Hacker Ranks Problems
+13. Stack
