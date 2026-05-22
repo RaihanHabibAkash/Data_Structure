@@ -56,16 +56,8 @@ int main() {
         q.push(val);
     }
 
-    // Reversing Stack because this need to compare
-    stack<int> st1;
-    while(!st.empty()) {
-        // Pushing value to st to st1(reverse order auto) 
-        st1.push(st.top());
-        st.pop();
-    }
-
     // Printing
-    cout << ( (check(st1, q)) ? "YES" : "NO" ) << endl;
+    cout << ( (check(st, q)) ? "YES" : "NO" ) << endl;
 
     return 0;
 }
