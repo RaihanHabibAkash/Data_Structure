@@ -1,3 +1,4 @@
+// https://docs.google.com/document/d/1KOilh4Vb-PN21_kD7ejLA6qx6AhVbHlq/edit
 /*
 Question: Take two stacks of size N and M as input and check if both of them are the same or not. Don’t use STL stack to solve this problem.
 
