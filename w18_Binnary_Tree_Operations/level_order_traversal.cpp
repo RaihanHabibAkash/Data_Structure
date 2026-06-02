@@ -15,6 +15,11 @@ public:
 };
 
 void level_order(Bnode* root) {
+    if(!root) {
+        cout << "No Treee" << endl;
+        return;
+    }
+
     queue<Bnode*> q;
     q.push(root);
 
