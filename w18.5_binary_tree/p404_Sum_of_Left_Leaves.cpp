@@ -41,7 +41,7 @@ public:
 
         return l+r;
     }
-    int sumOfLeftLeaves(TreeNode* root) {
+    int sumOfLeftLeaves(TreeNode* root) { 
         bool flag = false;
         return left_leaf_sum(root, flag);
     }
