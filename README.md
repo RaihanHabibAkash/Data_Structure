@@ -18,4 +18,6 @@
 16. Stack Queue HackerRank Problems
 17. Binnary Tree
 18. Binary Tree operations
-19. Binary Tree Code360 Problems
+19. Binary Tree Code360 Problems & STL pair
+20. Binary Tree Hacker Rank
+21. Binary Search Tree
