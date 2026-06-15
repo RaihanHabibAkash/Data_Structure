@@ -90,7 +90,7 @@ int main() {
     Bnode* root = input_tree();
 
     // Taking new val input
-    insert_BST(root, 11);
+    insert_BST(root, 12);
 
     // Printing
     level_order_print(root);
