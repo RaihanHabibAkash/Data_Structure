@@ -1,0 +1,1 @@
+{"name":"Local: sorted_array_to_BST","url":"f:\\Codes\\ForPithorons\\Data Structure\\w21_BST\\sorted_array_to_BST.cpp","tests":[{"id":1781513477053,"input":"6\n10 11 12 13 14 15","output":"12 10 14 11 13 15 "}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"f:\\Codes\\ForPithorons\\Data Structure\\w21_BST\\sorted_array_to_BST.cpp","group":"local","local":true}
