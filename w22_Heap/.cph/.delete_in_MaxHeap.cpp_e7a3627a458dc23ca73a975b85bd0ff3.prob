@@ -1,0 +1,1 @@
+{"name":"Local: delete_in_MaxHeap","url":"f:\\Codes\\ForPithorons\\Data Structure\\w22_Heap\\delete_in_MaxHeap.cpp","tests":[{"id":1781588450483,"input":"11\n5 20 13 20 30 40 80 7 4 2 3","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"f:\\Codes\\ForPithorons\\Data Structure\\w22_Heap\\delete_in_MaxHeap.cpp","group":"local","local":true}
