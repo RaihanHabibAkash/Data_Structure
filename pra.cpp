@@ -46,30 +46,28 @@ Bnode* input_tree() {
     return root;
 }
 
-void leftSide(Bnode* root, vector<int>& v) {
-    if(!root) return;
+void level_order(Bnode* root, vector<int>& v, int k) {
+    queue<pair<Bnode*, int>> q;
+    q.push({root, 0});
 
-    if(root->left) leftSide(root->left, v);
-    else leftSide(root->right, v);
-    v.push_back(root->val);
-}
+    while(!q.empty()) {
+        Bnode* node = q.front().first;
+        int level = q.front().second;
+        q.pop();
 
-void rightSide(Bnode* root, vector<int>& v) {
-    if(!root) return;
+        if(level == k) v.push_back(node->val);
 
-    v.push_back(root->val);
-    if(root->right) rightSide(root->right, v);
-    else rightSide(root->left, v);
+        if(node->left) q.push({node->left, level+1});
+        if(node->right) q.push({node->right, level+1});
+    }
 }
 
 int main() {
     Bnode* root = input_tree();
 
     vector<int> v;
-
-    leftSide(root->left, v);
-    v.push_back(root->val);
-    rightSide(root->right, v);
+    int k; cin >> k;
+    level_order(root, v, k);
     
     for(int x : v) cout << x << " ";
     cout << endl;
