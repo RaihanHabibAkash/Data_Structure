@@ -46,31 +46,33 @@ Bnode* input_tree() {
     return root;
 }
 
-int cntNds(Bnode* root) {
-    // Base case
-    if(!root) return 0;
+void leftSide(Bnode* root, vector<int>& v) {
+    if(!root) return;
 
-    int l = cntNds(root->left);
-    int r = cntNds(root->right);
-
-    return l+r+1;
+    if(root->left) leftSide(root->left, v);
+    else leftSide(root->right, v);
+    v.push_back(root->val);
 }
 
-int height(Bnode* root) {
-    if(!root) return 0;
+void rightSide(Bnode* root, vector<int>& v) {
+    if(!root) return;
 
-    int l = height(root->left);
-    int r = height(root->right);
-
-    return max(l, r) + 1;
+    v.push_back(root->val);
+    if(root->right) rightSide(root->right, v);
+    else rightSide(root->left, v);
 }
 
 int main() {
     Bnode* root = input_tree();
 
-    if(!root) cout << "YES" << endl;
-    else if((pow(2, height(root)) - 1) == cntNds(root)) cout << "YES" << endl;
-    else cout << "NO" << endl;
+    vector<int> v;
+
+    leftSide(root->left, v);
+    v.push_back(root->val);
+    rightSide(root->right, v);
     
+    for(int x : v) cout << x << " ";
+    cout << endl;
+
     return 0;
 }
