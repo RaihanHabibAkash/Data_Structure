@@ -19,7 +19,7 @@ public:
         while(1) {
             int larIdx = idx;
             
-            int leftIdx = 2*idx+1;
+            int leftIdx = 2*idx+1;         
             int rightIdx = 2*idx+2;
 
             if(leftIdx < nodes.size() && nodes[leftIdx] > nodes[larIdx]) larIdx = leftIdx;
@@ -43,6 +43,19 @@ public:
         down_heapify(idx);
     }
 
+    void buildHeapFromArray(vector<int> arr) {
+        nodes = arr;
+        int lastNonLeafNode = arr.size()/2 - 1;
+
+        for(int i = lastNonLeafNode; i >= 0; i--) down_heapify(i);
+    }
+
+    int extractMax() {
+        int mx = nodes[0];
+        pop(0);
+        return mx;
+    }
+
     void print() {
         for(int node : nodes) cout << node << " ";
         cout << endl;
@@ -55,7 +68,15 @@ int main() {
     heap.push(20);
     heap.push(30);
     heap.push(40);
-    heap.print();
+
+    vector<int> arr = {1,2,3,4,5};
+    heap.buildHeapFromArray(arr);
+
+    // heap.print();
+    int index = arr.size();
+    for(int i = 0; i < index; i++)
+        cout << heap.extractMax() << " ";
+    cout << endl;
 
     return 0;
 }
