@@ -62,3 +62,62 @@ Sample Output 2 :
 -1 
 10
 */
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+class Queue {
+public:
+    class Node {
+    public:
+        int val;
+        Node* next;
+
+        Node(int val) {
+            this->val = val;
+            next = NULL;
+        } 
+    };
+
+    Node* head = NULL, * tail = NULL;
+    Queue() {
+
+    }
+
+
+    bool isEmpty() {
+        return head == NULL;
+    }
+
+    void enqueue(int data) {
+        Node* node = new Node(data);
+
+        if(!head) {
+            head = node;
+            tail = node;
+            return;
+        }
+
+        tail->next = node;
+        tail = tail->next;
+    }
+
+    int dequeue() {
+        if(isEmpty()) return -1;
+
+        int cur = head->val;
+        if(!head->next) {
+            head = NULL;
+            tail = NULL;
+        }
+        else head = head->next;
+        
+        return cur;
+    }
+
+    int front() {
+        if(isEmpty()) return -1;
+        return head->val;
+    }
+};
